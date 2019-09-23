@@ -32,8 +32,8 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: composer install --no-interaction --prefer-dist
-      - run: sudo apt-get install -g npm@latest
+      - run: composer install -n --prefer-dist
+      - run: sudo apt-get install nodejs
 
       - save_cache:
           key: v1-dependencies-{{ checksum "composer.json" }}
